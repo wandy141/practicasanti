@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d9b92291-0015-45f6-bbe8-e2c6e7b6d87c">
+	<property name="ireport.zoom" value="0.7697371773460598"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="fact" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     factura.`num_factura` AS factura_idfactura,
+     factura.`num_factura` AS factura_num_factura,
+     factura.`fecha` AS factura_fecha,
+     factura.`iddetalle` AS factura_iddetalle,
+     factura.`id_cli` AS factura_id_cliente,
+     factura.`nombre_emp` AS factura_nombre_emp,
+     factura.`apellido_emp` AS factura_apellido_emp,
+     factura.`id_cli` AS factura_id_cli,
+     factura.`nombre_cli` AS factura_nombre_cli,
+     factura.`apellido_cli` AS factura_apellido_cli,
+     factura.`fecha` AS factura_fecha,
+     factura.`total` AS factura_total,
+     detalle_factura.`iddetalle_factura` AS detalle_factura_iddetalle_factura,
+     detalle_factura.`id_factura` AS detalle_factura_id_factura,
+     detalle_factura.`id_prd` AS detalle_factura_id_prd,
+     detalle_factura.`nombrepr` AS detalle_factura_nombrepr,
+     detalle_factura.`precio` AS detalle_factura_precio,
+     detalle_factura.`cantidad` AS detalle_factura_cantidad,
+     factura.`num_factura` AS factura_num_factura,
+     factura.`iddetalle` AS factura_iddetalle,
+     factura.`nombre_emp` AS factura_nombre_emp,
+     factura.`id_cli` AS factura_id_cli,
+     factura.`apellido_emp` AS factura_apellido_emp,
+     factura.`nombre_cli` AS factura_nombre_cli,
+     factura.`apellido_cli` AS factura_apellido_cli,
+     factura.`fecha` AS factura_fecha,
+     factura.`total` AS factura_total,
+     detalle_factura.`iddetalle_factura` AS detalle_factura_iddetalle_factura,
+     detalle_factura.`id_factura` AS detalle_factura_id_factura,
+     detalle_factura.`id_prd` AS detalle_factura_id_prd,
+     detalle_factura.`nombrepr` AS detalle_factura_nombrepr,
+     detalle_factura.`precio` AS detalle_factura_precio,
+     detalle_factura.`cantidad` AS detalle_factura_cantidad
+FROM
+     `ferreteria_nyt`.`factura` factura,
+     `ferreteria_nyt`.`detalle_factura` detalle_factura
+where
+factura.`num_factura` = $P{fact}]]>
+	</queryString>
+	<field name="factura_idfactura" class="java.lang.Integer"/>
+	<field name="factura_num_factura" class="java.lang.Integer"/>
+	<field name="factura_fecha" class="java.sql.Date"/>
+	<field name="factura_iddetalle" class="java.lang.Integer"/>
+	<field name="factura_id_cliente" class="java.lang.Integer"/>
+	<field name="factura_nombre_emp" class="java.lang.String"/>
+	<field name="factura_apellido_emp" class="java.lang.String"/>
+	<field name="factura_id_cli" class="java.lang.Integer"/>
+	<field name="factura_nombre_cli" class="java.lang.String"/>
+	<field name="factura_apellido_cli" class="java.lang.String"/>
+	<field name="factura_total" class="java.lang.Integer"/>
+	<field name="detalle_factura_iddetalle_factura" class="java.lang.Integer"/>
+	<field name="detalle_factura_id_factura" class="java.lang.Integer"/>
+	<field name="detalle_factura_id_prd" class="java.lang.Integer"/>
+	<field name="detalle_factura_nombrepr" class="java.lang.String"/>
+	<field name="detalle_factura_precio" class="java.lang.Integer"/>
+	<field name="detalle_factura_cantidad" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="126" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="126" backcolor="#999999" uuid="0efe833a-5916-4ebb-82bf-8fbcf2c0e064"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="197" y="50" width="170" height="34" forecolor="#FFCC00" backcolor="#FFFF33" uuid="9d67f55e-4f94-4406-87fa-826fffca84bd"/>
+				<textElement>
+					<font size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ferreteria NYT]]></text>
+			</staticText>
+			<image>
+				<reportElement x="37" y="19" width="116" height="96" uuid="d7c9299d-1903-4b78-8bf7-e2956229a26a"/>
+				<imageExpression><![CDATA["C:\\Users\\18297\\OneDrive\\Documentos\\NetBeansProjects\\proyecto\\src\\proyecto\\images (1).png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="82">
+			<textField>
+				<reportElement x="97" y="20" width="100" height="20" uuid="ea5ddcef-5af6-406a-a222-330c6c5addc9"/>
+				<textFieldExpression><![CDATA[$F{field}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="250" y="72" width="100" height="1" uuid="62b3029a-6106-42f8-a632-09abc931e172"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
